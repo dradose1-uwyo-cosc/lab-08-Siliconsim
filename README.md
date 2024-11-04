@@ -1,12 +1,7 @@
-# [Name]
-## [Assignment #]
-## [Submission date: MM/DD/YY]
+# Jake Huggins  
+## Lab 08
+## 11/04/2024
 ## Worked with/sources 
-* example
-* example
-* example
-* example
+* https://www.geeksforgeeks.org/convert-string-to-float-in-python/
 ## Project Quirks/ Things that don't work
-* example
-* example
-* example
+* None
