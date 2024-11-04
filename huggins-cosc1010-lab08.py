@@ -62,23 +62,38 @@ def calculate_values(slope, intercept, lower_x, upper_x):
     return values
 
 print("*" * 75)
+print("Linear Function:")
 slope = 0
 intercept = 0
 lower_x = 0
 upper_x = 0
 
 while (True):
+    input_value = ""
     try:
-        slope = float(input("Please input a proper value for the slope: "))
-        intercept = float(input("Please input a proper value for the y-intercept: "))
-        lower_x = int(input("Please input a proper value for the lower x bound: "))
-        upper_x = int(input("Please input a proper value for the upper x bound: "))
-        break
+        input_value = input("Please input a proper value for the slope: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        slope = float(input_value)
+
+        input_value = input("Please input a proper value for the y-intercept: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        intercept = float(input_value)
+
+        input_value = input("Please input a proper value for the lower x-bound: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        lower_x = int(input_value)
+
+        input_value = input("Please input a proper value for the upper x-bound: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        upper_x = int(input_value)
+        print(calculate_values(slope, intercept, lower_x, upper_x))
     except:
         print('Invalid Input!')
         continue
-
-print(calculate_values(slope, intercept, lower_x, upper_x))
 
 # Write a function to solve the quadratic formula
 # https://en.wikipedia.org/wiki/Quadratic_formula
@@ -90,7 +105,6 @@ print(calculate_values(slope, intercept, lower_x, upper_x))
 
 def calculate_roots(a, b, c):
     determinant = (b * b) - (4*a*c)
-    print(determinant)
     if determinant < 0:
         return "No real solutions"
     
@@ -101,15 +115,26 @@ def calculate_roots(a, b, c):
         return positive_root
     return [positive_root, negative_root]
 
+print("Quadratic Equation:")
 a, b, c = 0, 0, 0
 while (True):
+    input_value
     try:
-        a = int(input("Please input a proper value for the a value: "))
-        b = int(input("Please input a proper value for the b value: "))
-        c = int(input("Please input a proper value for the c value: "))
-        break
+        input_value = input("Please input a proper value for the a value: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        a = int(input_value)
+
+        input_value = input("Please input a proper value for the b value: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        b = int(input_value)
+
+        input_value = input("Please input a proper value for the c value: ")
+        if (input_value == "break" or input_value == "Break"):
+            break
+        c = int(input_value)
+        print(calculate_roots(a,b,c))
     except:
         print('Invalid Input!')
         continue
-
-print(calculate_roots(a,b,c))
