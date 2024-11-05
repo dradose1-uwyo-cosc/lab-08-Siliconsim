@@ -67,11 +67,12 @@ data = convert_val(date)
 month = months[data[0] - 1]
 days = data[1]
 year = data[2]
+time = 0
 
+time = calc_elapse_days(month, days)
 if is_leap_year(year):
     if (month == "February"):
-        month += "Leap"
-time = calc_elapse_days(month, days)
+        time -= 1
 
 y = year - 1
 #Jan first falls on day x where:
