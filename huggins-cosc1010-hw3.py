@@ -38,46 +38,47 @@ def convert_val(input):
             num = int(vals[i])
             vals[i] = num
         except:
-            print("Not a number!")
+            pass
     return vals
     
 def is_valid(vals):
-    if (vals[0] > len(months) or vals[0] < 1):
+    try:
+        if (vals[0] > len(months) or vals[0] < 1):
+            return False
+        month = months[vals[0] - 1]
+        if (is_leap_year(vals[2]) and month == "February"):
+            month += "Leap"
+        if (vals[1] > num_days[month] or vals[1] < 0):
+            return False
+        return True
+    except:
         return False
-    month = months[vals[0] - 1]
-    if (is_leap_year(vals[2]) and month == "February"):
-        month += "Leap"
-    
-    if (vals[1] > num_days[month] or vals[1] < 0):
-        return False
-    return True
 
-time = 0
-data = convert_val(string)
+date = ""
+while (True):
+    date = input("Please input a date in the format MM/DD/YYYY. E.g., 09/05/2004: ")
+    if (not is_valid(convert_val(date))):
+        print("Invalid Input!")
+        continue
+    break
+
+data = convert_val(date)
 
 month = months[data[0] - 1]
 days = data[1]
 year = data[2]
 
-print(is_leap_year(year))
 if is_leap_year(year):
-    time -= 1
     if (month == "February"):
         month += "Leap"
-
-print(month)
 time = calc_elapse_days(month, days)
-num_week_days = (time // 7) * 7
 
 y = year - 1
 #Jan first falls on day x where:
 day = (36 + y +(y/4) - (y/100) + (y/400)) % 7
-print(round(day))
-print(round(day) + ((time) - num_week_days))
-print(((time) - num_week_days) + 2)
 
 week_day = (round(day) + time) % 7
-print(week_days[week_day])
+print(f"{date} is on a {week_days[week_day]}")
 
 #print(week_days[round(day) - 1])
 
