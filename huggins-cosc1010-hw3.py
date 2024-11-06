@@ -15,8 +15,8 @@ num_days = {
     "November": 30,
     "December": 30
 }
+date = ""
 year = 0
-string = "9/5/2023"
 
 def is_leap_year(year):
     return year % 4 == 0
@@ -54,7 +54,6 @@ def is_valid(vals):
     except:
         return False
 
-date = ""
 while (True):
     date = input("Please input a date in the format MM/DD/YYYY. E.g., 09/05/2004: ")
     if (not is_valid(convert_val(date))):
@@ -67,9 +66,8 @@ data = convert_val(date)
 month = months[data[0] - 1]
 days = data[1]
 year = data[2]
-time = 0
-
 time = calc_elapse_days(month, days)
+
 if is_leap_year(year):
     if (month == "February"):
         time -= 1
@@ -81,5 +79,4 @@ day = (36 + y +(y/4) - (y/100) + (y/400)) % 7
 week_day = (round(day) + time) % 7
 print(f"{date} is on a {week_days[week_day]}")
 
-#print(week_days[round(day) - 1])
 
