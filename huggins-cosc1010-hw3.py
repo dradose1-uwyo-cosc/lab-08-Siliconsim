@@ -1,3 +1,11 @@
+# Jake Huggins  
+# UWYO COSC 1010
+# 11/4/2024 
+# HW03
+# Lab Section: 14
+# Sources, people worked with, help given to: None
+
+
 week_days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 num_days = {
@@ -78,5 +86,4 @@ day = (36 + y +(y/4) - (y/100) + (y/400)) % 7
 
 week_day = (round(day) + time) % 7
 print(f"{date} is on a {week_days[week_day]}")
-
 
